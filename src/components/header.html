@@ -1,0 +1,43 @@
+<header
+    class="h-16 glass-header border-b border-slate-200 flex items-center justify-between px-4 sm:px-6 z-10 relative">
+    <div class="flex items-center gap-4">
+        <!-- دکمه همبرگری کلاپس سایدبار -->
+        <button onclick="toggleSidebar()"
+            class="text-slate-500 hover:text-primary transition-colors focus:outline-none bg-slate-100 p-2 rounded-lg"
+            title="جمع/باز کردن منو">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+        <h1 class="font-bold text-lg hidden sm:block text-slate-700">نمای مدیریتی تجارت الکترونیکی کشور</h1>
+    </div>
+
+    <div class="flex items-center gap-4">
+        <!-- ویجت زنده تاریخ و زمان شمسی (تایم ایران) -->
+        <div class="hidden lg:flex flex-col text-left text-slate-600 border-l border-slate-200 pl-4">
+            <span id="live-date" class="text-xs font-bold text-slate-700">--</span>
+            <span id="live-time" class="text-xs text-slate-500 font-medium tracking-widest text-left"
+                dir="ltr">--:--:--</span>
+        </div>
+
+        <button class="relative p-2 text-slate-400 hover:text-primary transition-colors">
+            <i class="fa-regular fa-bell text-xl"></i>
+            <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-danger rounded-full"></span>
+        </button>
+
+        <div class="flex items-center gap-3 pl-2 border-l border-slate-200">
+            <div class="text-left hidden sm:block">
+                <p class="text-sm font-bold text-slate-700">امیر نقوی</p>
+                <p class="text-xs text-slate-500">مدیر ارشد سیستم</p>
+            </div>
+            <div
+                class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold border border-blue-200">
+                ان
+            </div>
+        </div>
+
+        <!-- دکمه خروج سریع در هدر -->
+        <button onclick="showLogoutModal()" class="text-slate-400 hover:text-danger transition-colors p-2"
+            title="خروج از سیستم">
+            <i class="fa-solid fa-power-off text-lg"></i>
+        </button>
+    </div>
+</header>

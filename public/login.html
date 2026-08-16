@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود سازمانی | مرکز توسعه تجارت الکترونیکی</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Vazirmatn', 'sans-serif'] }, colors: { primary: '#1d4ed8' } } }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden relative">
+        <!-- خط رنگی بالای فرم -->
+        <div class="h-2 bg-primary w-full"></div>
+
+        <div class="p-8">
+            <div class="flex justify-center mb-6">
+                <div class="bg-blue-50 p-4 rounded-2xl shadow-sm border border-blue-100">
+                    <!-- اگر فایل لوکال را اینجا هم دارید مسیرش را تنظیم کنید، فعلا از آیکون جایگزین استفاده میکنیم تا عکس لود شود -->
+                    <img src="./assets/logo-fa.png" alt="لوگو" class="h-14 object-contain fallback-icon"
+                        onerror="this.outerHTML='<i class=\'fa-solid fa-shield-halved text-4xl text-primary\'></i>'">
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-center text-slate-800 mb-2">درگاه ورود مدیریتی</h2>
+            <p class="text-sm text-center text-slate-500 mb-8">لطفاً اطلاعات هویتی خود را وارد نمایید</p>
+
+            <!-- مرحله اول: نام کاربری و رمز -->
+            <div id="step-1" class="transition-all duration-300">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">کد ملی / نام کاربری</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400"><i
+                                    class="fa-solid fa-user"></i></span>
+                            <input type="text" value="admin_naghavi"
+                                class="w-full pl-3 pr-10 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+                                placeholder="کد ملی خود را وارد کنید">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">رمز عبور</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400"><i
+                                    class="fa-solid fa-lock"></i></span>
+                            <input type="password" value="********"
+                                class="w-full pl-3 pr-10 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
+                        </div>
+                    </div>
+                    <button onclick="goToStep2()"
+                        class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-3 rounded-xl shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-0.5 mt-4">
+                        بررسی هویت و ادامه <i class="fa-solid fa-arrow-left mr-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- مرحله دوم: ورود دو مرحله ای (2FA) -->
+            <div id="step-2" class="hidden transition-all duration-300 opacity-0 transform translate-x-8">
+                <div class="text-center mb-6">
+                    <div
+                        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-3">
+                        <i class="fa-solid fa-mobile-screen-button text-2xl"></i>
+                    </div>
+                    <p class="text-sm text-slate-600">کد تایید ۵ رقمی به شماره موبایل شما (***۰۹۱۲) ارسال شد.</p>
+                </div>
+                <div class="flex justify-center gap-2 mb-6" dir="ltr">
+                    <input type="text" maxlength="1"
+                        class="w-12 h-14 text-center text-xl font-bold border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary outline-none"
+                        value="4">
+                    <input type="text" maxlength="1"
+                        class="w-12 h-14 text-center text-xl font-bold border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary outline-none"
+                        value="8">
+                    <input type="text" maxlength="1"
+                        class="w-12 h-14 text-center text-xl font-bold border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary outline-none"
+                        value="1">
+                    <input type="text" maxlength="1"
+                        class="w-12 h-14 text-center text-xl font-bold border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary outline-none"
+                        value="5">
+                    <input type="text" maxlength="1"
+                        class="w-12 h-14 text-center text-xl font-bold border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary outline-none"
+                        value="9">
+                </div>
+                <button onclick="doLogin()"
+                    class="w-full bg-success hover:bg-green-600 text-white font-bold py-3 rounded-xl shadow-lg shadow-green-500/30 transition-all transform hover:-translate-y-0.5">
+                    تایید و ورود به داشبورد <i class="fa-solid fa-check mr-2"></i>
+                </button>
+                <button onclick="goBack()"
+                    class="w-full mt-3 text-slate-500 hover:text-slate-700 text-sm font-medium py-2 transition-colors">
+                    اصلاح شماره / بازگشت
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function goToStep2() {
+            document.getElementById('step-1').classList.add('hidden', 'opacity-0');
+            const step2 = document.getElementById('step-2');
+            step2.classList.remove('hidden');
+            setTimeout(() => { step2.classList.remove('opacity-0', 'translate-x-8'); }, 50);
+        }
+        function goBack() {
+            document.getElementById('step-2').classList.add('hidden', 'opacity-0', 'translate-x-8');
+            const step1 = document.getElementById('step-1');
+            step1.classList.remove('hidden');
+            setTimeout(() => { step1.classList.remove('opacity-0'); }, 50);
+        }
+        function doLogin() {
+            // شبیه‌سازی لودینگ و ریدایرکت
+            const btn = document.querySelector('.bg-success');
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> در حال انتقال...';
+            setTimeout(() => { window.location.href = 'index.html'; }, 1000);
+        }
+    </script>
+</body>
+
+</html>
