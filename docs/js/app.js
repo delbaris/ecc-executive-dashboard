@@ -18,9 +18,9 @@ async function loadComponent(elementId, pathsArray) {
 async function initApp() {
     // آرایه‌ای از مسیرهای محتمل برای حل مشکل 404 در لایوسرور
     await Promise.all([
-        loadComponent('sidebar-container', ['../src/components/sidebar.html', './src/components/sidebar.html', '../../src/components/sidebar.html', '/src/components/sidebar.html']),
-        loadComponent('header-container', ['../src/components/header.html', './src/components/header.html', '../../src/components/header.html', '/src/components/header.html']),
-        loadComponent('cards-container', ['../src/components/cards.html', './src/components/cards.html', '../../src/components/cards.html', '/src/components/cards.html'])
+        loadComponent('sidebar-container', ['../docs/components/sidebar.html', './docs/components/sidebar.html', '../../docs/components/sidebar.html', '/docs/components/sidebar.html']),
+        loadComponent('header-container', ['../docs/components/header.html', './docs/components/header.html', '../../docs/components/header.html', '/docs/components/header.html']),
+        loadComponent('cards-container', ['../docs/components/cards.html', './docs/components/cards.html', '../../docs/components/cards.html', '/docs/components/cards.html'])
     ]);
 
     if (window.initCharts) window.initCharts();
