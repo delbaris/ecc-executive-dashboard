@@ -94,10 +94,10 @@ const MapModule = {
         const mapSources = [
             './assets/ir-all.geo.json',
             './assets/iran.json',
-            '../public/assets/ir-all.geo.json',
-            '../public/assets/iran.json',
-            '../../public/assets/ir-all.geo.json',
-            '/public/assets/ir-all.geo.json',
+            '../docs/assets/ir-all.geo.json',
+            '../docs/assets/iran.json',
+            '../../docs/assets/ir-all.geo.json',
+            '/docs/assets/ir-all.geo.json',
             '/assets/ir-all.geo.json',
             'https://cdn.jsdelivr.net/gh/roshankar/iran-geojson@master/iran-provinces.json'
         ];
