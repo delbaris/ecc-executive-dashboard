@@ -18,9 +18,9 @@ async function loadComponent(elementId, pathsArray) {
 async function initApp() {
     // آرایه‌ای از مسیرهای محتمل برای حل مشکل 404 در لایوسرور
     await Promise.all([
-        loadComponent('sidebar-container', ['../components/sidebar.html', './components/sidebar.html', '../../components/sidebar.html', '/components/sidebar.html']),
-        loadComponent('header-container', ['../components/header.html', './components/header.html', '../../components/header.html', '/components/header.html']),
-        loadComponent('cards-container', ['../components/cards.html', './components/cards.html', '../../components/cards.html', '/components/cards.html'])
+        loadComponent('sidebar-container', ['./components/sidebar.html']),
+        loadComponent('header-container', ['./components/header.html']),
+        loadComponent('cards-container', ['./components/cards.html'])
     ]);
 
     if (window.initCharts) window.initCharts();
